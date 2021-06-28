@@ -6,11 +6,12 @@ const Lazy = (__fetch) => {
         get: (target, prop, receiver) => {
           return async function () {
             return new Promise((resolve) => {
-              if (target[prop]) {
+              if (target[prop] != undefined) {
                 resolve(target[prop]);
               } else {
                 __fetch(prop).then((v) => {
                   target[prop] = v;
+                  console.log(target);
                   resolve(v);
                 });
               }
