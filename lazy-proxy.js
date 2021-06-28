@@ -11,7 +11,6 @@ const Lazy = (__fetch) => {
               } else {
                 __fetch(prop).then((v) => {
                   target[prop] = v;
-                  console.log(target);
                   resolve(v);
                 });
               }
@@ -32,13 +31,11 @@ const lazyList = (fetchList) => {
     {
       get: (target, prop, receiver) => {
         return async function () {
-          return new Promise((resolve) => {
-            if (target[prop]) {
+          return new Promise((resolve, reject) => {
+            if (target[prop] != undefined) {
               resolve(target[prop]);
             } else {
-              let fetchFunction = () => {
-                throw "No fetch function found";
-              };
+              let fetchFunction;
               for (let i = 0; i < fetchList.length; i++) {
                 const { key, fetch } = fetchList[i];
                 if (prop.match(key)) {
@@ -46,6 +43,7 @@ const lazyList = (fetchList) => {
                   break;
                 }
               }
+              if (!fetchFunction) reject("No matching fetch function");
               fetchFunction(prop).then((v) => {
                 target[prop] = v;
                 resolve(v);
