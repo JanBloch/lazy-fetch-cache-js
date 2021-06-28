@@ -1,0 +1,11 @@
+{
+  "name": "lazy-fetch-cache",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lazy-proxy.js",
+  "scripts": {
+    
+  },
+  "author": "Jan Bloch",
+  "license": "ISC"
+}
