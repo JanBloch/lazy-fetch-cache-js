@@ -1,11 +1,18 @@
 {
   "name": "lazy-fetch-cache",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "lazy-proxy.js",
   "scripts": {
-    
+    "test": "jest --coverage"
   },
   "author": "Jan Bloch",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JanBloch/lazy-fetch-cache-js.git"
+  },
+  "devDependencies": {
+    "jest": "^27.0.5"
+  }
 }
