@@ -7,7 +7,7 @@
     "test": "jest --coverage"
   },
   "author": "Jan Bloch",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/JanBloch/lazy-fetch-cache-js.git"
