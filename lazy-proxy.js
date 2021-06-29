@@ -58,4 +58,5 @@ const lazyList = (fetchList) => {
     }
   );
 };
+
 module.exports = Lazy;
